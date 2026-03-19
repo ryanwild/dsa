@@ -16,8 +16,9 @@ function mergeSort(input: number[]): number[] {
   if (input.length < 2) {
     return input
   }
-  const left = mergeSort(input.slice(0, Math.ceil(input.length / 2)))
-  const right = mergeSort(input.slice(Math.ceil(input.length / 2)))
+  const half = Math.floor(input.length / 2)
+  const left = mergeSort(input.slice(0, half))
+  const right = mergeSort(input.slice(half))
   return merge(left, right)
 }
 
