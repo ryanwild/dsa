@@ -16,11 +16,11 @@ function bubbleSort(input: number[]): number[] {
   while (swaping) {
     swaping = false
     for (let i = 1; i < end; i++) {
-      const a = input[i - 1]
-      const b = input[i]
-      if (a > b) {
-        input[i - 1] = b
-        input[i] = a
+      if (input[i - 1] > input[i]) {
+        const swap = input[i - 1]
+        input[i - 1] = input[i]
+        input[i] = swap
+        swaping = true
       }
     }
     end--
